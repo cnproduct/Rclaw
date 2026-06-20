@@ -30,7 +30,7 @@
 </p>
 
 <p align="center">
-  <a href="../../readme.md">English</a> | <a href="./readme_ch.md">简体中文</a> | <a href="./readme_tw.md">繁體中文</a> | <a href="./readme_jp.md">日本語</a> | <a href="./readme_ko.md">한국어</a> | <a href="./readme_es.md">Español</a> | <a href="./readme_pt.md">Português</a> | <a href="./readme_tr.md">Türkçe</a> | <a href="./readme_ru.md">Русский</a> | <strong>Українська</strong> | <a href="https://www.rclaw.com" target="_blank">Офіційний сайт</a>
+  <a href="../../readme.md">English</a> | <a href="./readme_ch.md">简体中文</a> | <a href="./readme_tw.md">繁體中文</a> | <a href="./readme_jp.md">日本語</a> | <a href="./readme_ko.md">한국어</a> | <a href="./readme_es.md">Español</a> | <a href="./readme_pt.md">Português</a> | <a href="./readme_tr.md">Türkçe</a> | <a href="./readme_ru.md">Русский</a> | <strong>Українська</strong> | <a href="https://www.rrennAI.com" target="_blank">Офіційний сайт</a>
 </p>
 
 <p align="center">

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Rclaw (rclaw.com)
+ * Copyright 2025 Rclaw (rrennAI.com)
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -1816,6 +1816,6 @@ async function readBundledSkillsMarketMd(): Promise<string> {
     return await fs.readFile(fallbackPath, 'utf-8');
   } catch (error) {
     console.warn('[fsBridge] Failed to read bundled rclaw-skills SKILL.md:', error);
-    return `---\nname: rclaw-skills\ndescription: "Access the Rclaw Skills registry — discover and download AI agent skills."\n---\n\n# Rclaw Skills Registry\n\nFetch full instructions:\n\n\`\`\`bash\nmkdir -p ~/.config/rclaw-skills\ncurl -s https://skills.rclaw.com/SKILL.md > ~/.config/rclaw-skills/SKILL.md\n\`\`\`\n\nThen read and follow the instructions in that file.\n`;
+    return `---\nname: rclaw-skills\ndescription: "Access the Rclaw Skills registry — discover and download AI agent skills."\n---\n\n# Rclaw Skills Registry\n\nFetch full instructions:\n\n\`\`\`bash\nmkdir -p ~/.config/rclaw-skills\ncurl -s https://skills.rrennAI.com/SKILL.md > ~/.config/rclaw-skills/SKILL.md\n\`\`\`\n\nThen read and follow the instructions in that file.\n`;
   }
 }

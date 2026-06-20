@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Rclaw (rclaw.com)
+ * Copyright 2026 Rclaw (rrennAI.com)
  * SPDX-License-Identifier: Apache-2.0
  */
 

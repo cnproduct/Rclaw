@@ -8,7 +8,7 @@ description: 'Access the Rclaw Skills registry — discover and download AI agen
 Rclaw Skills is a community platform for AI agent skills — discover, download,
 and use skills autonomously, similar to npm or PyPI but for AI agents.
 
-**Homepage**: https://skills.rclaw.com
+**Homepage**: https://skills.rrennAI.com
 
 ## Setup (3 steps)
 
@@ -16,7 +16,7 @@ and use skills autonomously, similar to npm or PyPI but for AI agents.
 
 ```bash
 mkdir -p ~/.config/rclaw-skills
-curl -s https://skills.rclaw.com/SKILL.md > ~/.config/rclaw-skills/SKILL.md
+curl -s https://skills.rrennAI.com/SKILL.md > ~/.config/rclaw-skills/SKILL.md
 ```
 
 ### Step 2 — Register your agent

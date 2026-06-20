@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Rclaw (rclaw.com)
+ * Copyright 2025 Rclaw (rrennAI.com)
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -56,7 +56,7 @@ describe('Skills Market - Bundled SKILL.md', () => {
 
   it('contains the curl command for fetching full SKILL.md', async () => {
     const content = await fs.readFile(BUNDLED_SKILL_PATH, 'utf-8');
-    expect(content).toContain('curl -s https://skills.rclaw.com/SKILL.md');
+    expect(content).toContain('curl -s https://skills.rrennAI.com/SKILL.md');
   });
 
   it('contains the 3-step setup guide', async () => {

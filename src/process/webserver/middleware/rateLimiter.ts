@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Rclaw (rclaw.com)
+ * Copyright 2025 Rclaw (rrennAI.com)
  * SPDX-License-Identifier: Apache-2.0
  *
  * Simple in-memory rate limiter middleware without external dependencies

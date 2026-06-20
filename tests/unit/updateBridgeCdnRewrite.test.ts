@@ -1,11 +1,42 @@
 /**
  * @license
- * Copyright 2025 Rclaw (rclaw.com)
+ * Copyright 2025 Rclaw (rrennAI.com)
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
+const registerMockServices = async () => {
+  const { registerPlatformServices } = await import('@/common/platform');
+  registerPlatformServices({
+    paths: {
+      getDataDir: () => '/test/path/userData',
+      getTempDir: () => '/test/path/temp',
+      getHomeDir: () => '/test/path/home',
+      getLogsDir: () => '/test/path/logs',
+      getAppPath: () => '/test/path/app',
+      isPackaged: () => true,
+      getSystemPath: (name: string) => `/test/path/${name}`,
+      getName: () => 'Rclaw',
+      getVersion: () => '1.0.0',
+      needsCliSafeSymlinks: () => false,
+    },
+    worker: {
+      fork: () => { throw new Error('Not implemented'); }
+    },
+    power: {
+      preventSleep: () => null,
+      allowSleep: () => {},
+      preventDisplaySleep: () => null,
+    },
+    notification: {
+      send: () => {}
+    },
+    network: {
+      fetch: vi.fn(),
+    }
+  });
+};
 vi.mock('@office-ai/platform', () => ({
   bridge: {
     buildProvider: vi.fn(() => {
@@ -135,13 +166,13 @@ describe('updateBridge CDN URL rewriting', () => {
 
       const macAsset = assets.find((a: { name: string }) => a.name === 'Rclaw-1.9.22-mac-arm64.dmg');
       expect(macAsset).toBeDefined();
-      expect(macAsset?.url).toBe('https://static.rclaw.com/releases/1.9.22/Rclaw-1.9.22-mac-arm64.dmg');
+      expect(macAsset?.url).toBe('https://static.rrennAI.com/releases/1.9.22/Rclaw-1.9.22-mac-arm64.dmg');
       expect(macAsset?.fallbackUrl).toBe(
         'https://github.com/iOfficeAI/Rclaw/releases/download/v1.9.22/Rclaw-1.9.22-mac-arm64.dmg'
       );
 
       const linuxAsset = assets.find((a: { name: string }) => a.name === 'Rclaw-1.9.22-linux-amd64.deb');
-      expect(linuxAsset?.url).toBe('https://static.rclaw.com/releases/1.9.22/Rclaw-1.9.22-linux-amd64.deb');
+      expect(linuxAsset?.url).toBe('https://static.rrennAI.com/releases/1.9.22/Rclaw-1.9.22-linux-amd64.deb');
     } finally {
       vi.unstubAllGlobals();
     }
@@ -158,7 +189,7 @@ describe('updateBridge CDN URL rewriting', () => {
       const handler = await getCheckHandler();
       const result = await handler({ repo: 'iOfficeAI/Rclaw' });
       const asset = result.data?.latest?.assets?.[0];
-      expect(asset?.url).toMatch(/^https:\/\/static\.rclaw\.com\/releases\/1\.9\.22\//);
+      expect(asset?.url).toMatch(/^https:\/\/static\.rrennAI\.com\/releases\/1\.9\.22\//);
       expect(asset?.url).not.toMatch(/\/v1\.9\.22\//);
     } finally {
       vi.unstubAllGlobals();
@@ -167,7 +198,7 @@ describe('updateBridge CDN URL rewriting', () => {
 });
 
 describe('updateBridge allowlist includes CDN host', () => {
-  it('accepts static.rclaw.com URLs for download', async () => {
+  it('accepts static.rrennAI.com URLs for download', async () => {
     vi.resetModules();
     vi.clearAllMocks();
 
@@ -183,6 +214,7 @@ describe('updateBridge allowlist includes CDN host', () => {
     vi.stubGlobal('fetch', fetchMock);
 
     try {
+      await registerMockServices();
       const { initUpdateBridge } = await import('@process/bridge/updateBridge');
       const { ipcBridge } = await import('@/common');
 
@@ -194,7 +226,7 @@ describe('updateBridge allowlist includes CDN host', () => {
       const handler = lastCall[0];
 
       const result = await handler({
-        url: 'https://static.rclaw.com/releases/1.9.22/Rclaw-1.9.22-mac-arm64.dmg',
+        url: 'https://static.rrennAI.com/releases/1.9.22/Rclaw-1.9.22-mac-arm64.dmg',
         fileName: 'Rclaw-1.9.22-mac-arm64.dmg',
       });
 
@@ -209,22 +241,27 @@ describe('updateBridge allowlist includes CDN host', () => {
     vi.resetModules();
     vi.clearAllMocks();
 
-    const { initUpdateBridge } = await import('@process/bridge/updateBridge');
-    const { ipcBridge } = await import('@/common');
+    try {
+      await registerMockServices();
+      const { initUpdateBridge } = await import('@process/bridge/updateBridge');
+      const { ipcBridge } = await import('@/common');
 
-    initUpdateBridge();
+      initUpdateBridge();
 
-    const provider = vi.mocked(ipcBridge.update.download.provider);
-    const lastCall = provider.mock.calls.at(-1);
-    if (!lastCall) throw new Error('update.download handler not registered');
-    const handler = lastCall[0];
+      const provider = vi.mocked(ipcBridge.update.download.provider);
+      const lastCall = provider.mock.calls.at(-1);
+      if (!lastCall) throw new Error('update.download handler not registered');
+      const handler = lastCall[0];
 
-    const result = await handler({
-      url: 'https://evil.example.com/fake.dmg',
-      fileName: 'fake.dmg',
-    });
+      const result = await handler({
+        url: 'https://evil.example.com/fake.dmg',
+        fileName: 'fake.dmg',
+      });
 
-    // Download is refused before any network I/O; exact error text comes from i18n and isn't asserted here.
-    expect(result.success).toBe(false);
+      // Download is refused before any network I/O; exact error text comes from i18n and isn't asserted here.
+      expect(result.success).toBe(false);
+    } finally {
+      vi.unstubAllGlobals();
+    }
   });
 });

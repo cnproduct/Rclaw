@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Rclaw (rclaw.com)
+ * Copyright 2025 Rclaw (rrennAI.com)
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -79,7 +79,7 @@ const AboutModalContent: React.FC = () => {
     },
     {
       title: t('settings.officialWebsite'),
-      url: 'https://www.rclaw.com',
+      url: 'https://www.rrennAI.com',
       icon: <Right theme='outline' size='16' />,
     },
   ];

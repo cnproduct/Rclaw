@@ -30,7 +30,7 @@
 </p>
 
 <p align="center">
-  <a href="./readme.md">English</a> | <a href="./docs/readme/readme_ch.md">简体中文</a> | <a href="./docs/readme/readme_tw.md">繁體中文</a> | <a href="./docs/readme/readme_jp.md">日本語</a> | <a href="./docs/readme/readme_ko.md">한국어</a> | <a href="./docs/readme/readme_es.md">Español</a> | <a href="./docs/readme/readme_pt.md">Português</a> | <a href="./docs/readme/readme_tr.md">Türkçe</a> | <strong>Русский</strong> | <a href="./docs/readme/readme_uk.md">Українська</a> | <a href="https://www.rclaw.com" target="_blank">Официальный сайт</a>
+  <a href="./readme.md">English</a> | <a href="./docs/readme/readme_ch.md">简体中文</a> | <a href="./docs/readme/readme_tw.md">繁體中文</a> | <a href="./docs/readme/readme_jp.md">日本語</a> | <a href="./docs/readme/readme_ko.md">한국어</a> | <a href="./docs/readme/readme_es.md">Español</a> | <a href="./docs/readme/readme_pt.md">Português</a> | <a href="./docs/readme/readme_tr.md">Türkçe</a> | <strong>Русский</strong> | <a href="./docs/readme/readme_uk.md">Українська</a> | <a href="https://www.rrennAI.com" target="_blank">Официальный сайт</a>
 </p>
 
 <p align="center">

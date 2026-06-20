@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Rclaw (rclaw.com)
+ * Copyright 2025 Rclaw (rrennAI.com)
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -77,7 +77,7 @@ export class ClientFactory {
           baseURL: baseUrl,
           timeout: options.timeout,
           defaultHeaders: {
-            'HTTP-Referer': 'https://rclaw.com',
+            'HTTP-Referer': 'https://rrennAI.com',
             'X-Title': 'Rclaw',
           },
           ...(options.baseConfig as OpenAIClientConfig),
@@ -129,7 +129,7 @@ export class ClientFactory {
           baseURL: baseUrl,
           timeout: options.timeout,
           defaultHeaders: {
-            'HTTP-Referer': 'https://rclaw.com',
+            'HTTP-Referer': 'https://rrennAI.com',
             'X-Title': 'Rclaw',
           },
           ...(options.baseConfig as OpenAIClientConfig),

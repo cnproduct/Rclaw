@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Rclaw (rclaw.com)
+ * Copyright 2025 Rclaw (rrennAI.com)
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -57,10 +57,10 @@ interface AutoUpdateCheckParams {
 const DEFAULT_REPO = 'iOfficeAI/Rclaw';
 const DEFAULT_USER_AGENT = 'Rclaw';
 const ALLOWED_ASSET_EXTS = new Set(['.exe', '.msi', '.dmg', '.zip', '.deb', '.rpm']);
-const CDN_HOST = 'static.rclaw.com';
+const CDN_HOST = 'static.rrennAI.com';
 const CDN_BASE_URL = `https://${CDN_HOST}/releases`;
 const ALLOWED_DOWNLOAD_HOSTS = new Set<string>([
-  CDN_HOST,
+  CDN_HOST.toLowerCase(),
   'github.com',
   'objects.githubusercontent.com',
   'github-releases.githubusercontent.com',

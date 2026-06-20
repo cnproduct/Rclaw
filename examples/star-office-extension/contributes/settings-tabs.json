@@ -10,7 +10,7 @@
   {
     "id": "rclaw-home",
     "name": "Rclaw Home",
-    "entryPoint": "https://rclaw.com/",
+    "entryPoint": "https://rrennAI.com/",
     "icon": "assets/star-office-icon.svg",
     "position": { "anchor": "display", "placement": "after" },
     "order": 80
