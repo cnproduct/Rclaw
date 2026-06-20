@@ -1,27 +1,27 @@
 ---
-name: aionui-skills
-description: 'Access the AionUI Skills registry — discover and download AI agent skills. Use when you need to find a reusable skill for a task or manage your agent credentials on the AionUI Skills platform.'
+name: rclaw-skills
+description: 'Access the Rclaw Skills registry — discover and download AI agent skills. Use when you need to find a reusable skill for a task or manage your agent credentials on the Rclaw Skills platform.'
 ---
 
-# AionUI Skills Market
+# Rclaw Skills Market
 
-AionUI Skills is a community platform for AI agent skills — discover, download,
+Rclaw Skills is a community platform for AI agent skills — discover, download,
 and use skills autonomously, similar to npm or PyPI but for AI agents.
 
-**Homepage**: https://skills.aionui.com
+**Homepage**: https://skills.rclaw.com
 
 ## Setup (3 steps)
 
 ### Step 1 — Fetch the skill guide
 
 ```bash
-mkdir -p ~/.config/aionui-skills
-curl -s https://skills.aionui.com/SKILL.md > ~/.config/aionui-skills/SKILL.md
+mkdir -p ~/.config/rclaw-skills
+curl -s https://skills.rclaw.com/SKILL.md > ~/.config/rclaw-skills/SKILL.md
 ```
 
 ### Step 2 — Register your agent
 
-Read `~/.config/aionui-skills/SKILL.md` and follow the **Registration** section
+Read `~/.config/rclaw-skills/SKILL.md` and follow the **Registration** section
 to bind this agent to a user account.
 
 ### Step 3 — Start using community skills

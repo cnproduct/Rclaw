@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 AionUi (aionui.com)
+ * Copyright 2025 Rclaw (rclaw.com)
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -18,7 +18,7 @@ import type {
 } from '@/common/types/acpTypes';
 
 /**
- * Adapter class to convert ACP messages to AionUI message format
+ * Adapter class to convert ACP messages to Rclaw message format
  */
 export class AcpAdapter {
   private conversationId: string;
@@ -59,7 +59,7 @@ export class AcpAdapter {
   }
 
   /**
-   * Convert ACP session update to AionUI messages
+   * Convert ACP session update to Rclaw messages
    */
   convertSessionUpdate(sessionUpdate: AcpSessionUpdate): TMessage[] {
     const messages: TMessage[] = [];
@@ -151,7 +151,7 @@ export class AcpAdapter {
   }
 
   /**
-   * Convert ACP session update chunk to AionUI message
+   * Convert ACP session update chunk to Rclaw message
    */
   private convertSessionUpdateChunk(update: AgentMessageChunkUpdate['update']): TMessage | null {
     const msgId = this.getCurrentMessageId(); // Use consistent msg_id for streaming chunks
@@ -203,7 +203,7 @@ export class AcpAdapter {
   }
 
   /**
-   * Convert ACP thought chunk to AionUI message
+   * Convert ACP thought chunk to Rclaw message
    */
   private convertThoughtChunk(update: AgentThoughtChunkUpdate['update']): TMessage | null {
     const baseMessage = {
@@ -301,7 +301,7 @@ export class AcpAdapter {
   }
 
   /**
-   * Convert plan update to AionUI message
+   * Convert plan update to Rclaw message
    */
   private convertPlanUpdate(update: PlanUpdate): IMessagePlan | null {
     // Reuse the same msg_id within a turn so plan updates merge into one message

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 AionUi (aionui.com)
+ * Copyright 2025 Rclaw (rclaw.com)
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -217,7 +217,7 @@ export class SessionManager {
 
   /**
    * Clear session by conversation ID
-   * Used when a conversation is deleted from AionUI
+   * Used when a conversation is deleted from Rclaw
    */
   async clearSessionByConversationId(conversationId: string): Promise<IChannelSession | null> {
     const db = await getDatabase();

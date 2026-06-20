@@ -1,5 +1,5 @@
 /**
- * Postinstall script for AionUi
+ * Postinstall script for Rclaw
  * Handles native module installation for different environments
  */
 
@@ -24,7 +24,13 @@ function runPostInstall() {
     } else {
       // In local environment, use electron-builder to install dependencies
       console.log('Local environment, installing app deps');
-      execSync('bunx electron-builder install-app-deps', {
+      let command = 'bunx electron-builder install-app-deps';
+      try {
+        execSync('bun --version', { stdio: 'ignore' });
+      } catch (err) {
+        command = 'npx electron-builder install-app-deps';
+      }
+      execSync(command, {
         stdio: 'inherit',
         env: {
           ...process.env,

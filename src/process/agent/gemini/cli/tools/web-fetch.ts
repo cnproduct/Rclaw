@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 AionUi (aionui.com)
+ * Copyright 2025 Rclaw (rclaw.com)
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -61,10 +61,10 @@ export interface WebFetchToolParams {
 }
 
 /**
- * Implementation of the WebFetch tool for AionUi - replaces built-in web_fetch for all models
+ * Implementation of the WebFetch tool for Rclaw - replaces built-in web_fetch for all models
  */
 export class WebFetchTool extends BaseDeclarativeTool<WebFetchToolParams, ToolResult> {
-  static readonly Name: string = 'aionui_web_fetch';
+  static readonly Name: string = 'rclaw_web_fetch';
 
   constructor(
     private readonly geminiClient: GeminiClient,

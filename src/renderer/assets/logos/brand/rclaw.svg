@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 80 80" fill="none">
+  <title>Rclaw CLI</title>
+  <circle cx="40" cy="40" r="40" fill="black"/>
+  <path d="M36 14 h8 v4 h-8 z" fill="white"/>
+  <path d="M40 18 L45 22 v6 L40 32 L35 28 v-6 z" fill="white"/>
+  <circle cx="40" cy="25" r="2.5" fill="black"/>
+  <path d="M35 24 L31 24 L23 34 L21 46 L32 60 L30 49 L27 41 L35 28 z" fill="white"/>
+  <path d="M45 24 L49 24 L57 34 L59 46 L48 60 L50 49 L53 41 L45 28 z" fill="white"/>
+</svg>

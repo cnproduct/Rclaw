@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 AionUi (aionui.com)
+ * Copyright 2025 Rclaw (rclaw.com)
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,8 +8,8 @@ import { getPlatformServices } from '@/common/platform';
 import { getDataPath } from '@process/utils';
 import * as path from 'path';
 import type { ExtensionSource } from './types';
-export const AIONUI_EXTENSIONS_PATH_ENV = 'AIONUI_EXTENSIONS_PATH';
-export const AIONUI_STRICT_ENV_ENV = 'AIONUI_STRICT_ENV';
+export const RCLAW_EXTENSIONS_PATH_ENV = 'RCLAW_EXTENSIONS_PATH';
+export const RCLAW_STRICT_ENV_ENV = 'RCLAW_STRICT_ENV';
 export const EXTENSION_MANIFEST_FILE = 'aion-extension.json';
 export const EXTENSIONS_DIR_NAME = 'extensions';
 export const PATH_SEPARATOR = process.platform === 'win32' ? ';' : ':';
@@ -23,7 +23,7 @@ export function getAppDataExtensionsDir(): string {
 }
 
 export function getEnvExtensionsDirs(): string[] {
-  const envPath = process.env[AIONUI_EXTENSIONS_PATH_ENV];
+  const envPath = process.env[RCLAW_EXTENSIONS_PATH_ENV];
   if (!envPath) return [];
   return envPath.split(PATH_SEPARATOR).filter(Boolean);
 }
@@ -36,8 +36,8 @@ export const HUB_SUPPORTED_SCHEMA_VERSION = 1;
 
 /**
  * Remote mirror base URLs for the AionHub repository (tried in order).
- * Set AIONUI_HUB_URL to prepend custom URLs (comma-separated, highest priority).
- * Example: AIONUI_HUB_URL=http://localhost:3000/,http://staging.example.com/
+ * Set RCLAW_HUB_URL to prepend custom URLs (comma-separated, highest priority).
+ * Example: RCLAW_HUB_URL=http://localhost:3000/,http://staging.example.com/
  */
 const HUB_DEFAULT_URLS = [
   'https://raw.githubusercontent.com/iOfficeAI/AionHub/dist-latest/',
@@ -45,7 +45,7 @@ const HUB_DEFAULT_URLS = [
 ];
 
 function resolveHubRemoteUrls(): string[] {
-  const envUrls = process.env.AIONUI_HUB_URL;
+  const envUrls = process.env.RCLAW_HUB_URL;
   if (!envUrls) return HUB_DEFAULT_URLS;
   const custom = envUrls
     .split(',')
@@ -72,16 +72,16 @@ export type ExtensionScanSource = { dir: string; source: ExtensionSource };
  * Returns the ordered list of extension directories to scan, with deduplication.
  *
  * Priority order:
- *   1. Environment variable (`AIONUI_EXTENSIONS_PATH`) — highest
- *   2. User data dir (`~/.aionui/extensions`)
+ *   1. Environment variable (`RCLAW_EXTENSIONS_PATH`) — highest
+ *   2. User data dir (`~/.rclaw/extensions`)
  *   3. Electron appData dir
  *
- * E2E test mode (`AIONUI_E2E_TEST=1`) only scans env dirs for hermetic runs.
+ * E2E test mode (`RCLAW_E2E_TEST=1`) only scans env dirs for hermetic runs.
  */
 export function getExtensionScanSources(): ExtensionScanSource[] {
   const sources: ExtensionScanSource[] = [];
   const seen = new Set<string>();
-  const isE2ETest = process.env.AIONUI_E2E_TEST === '1';
+  const isE2ETest = process.env.RCLAW_E2E_TEST === '1';
 
   const push = (dir: string, source: ExtensionSource) => {
     const normalized = path.resolve(dir);

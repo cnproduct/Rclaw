@@ -193,10 +193,10 @@ Variables set automatically during test launch:
 
 | Variable                     | Value | Purpose                  |
 | ---------------------------- | ----- | ------------------------ |
-| `AIONUI_E2E_TEST`            | `1`   | App recognizes test mode |
-| `AIONUI_DISABLE_AUTO_UPDATE` | `1`   | No update checks         |
-| `AIONUI_DISABLE_DEVTOOLS`    | `1`   | No DevTools windows      |
-| `AIONUI_CDP_PORT`            | `0`   | CDP disabled             |
+| `RCLAW_E2E_TEST`            | `1`   | App recognizes test mode |
+| `RCLAW_DISABLE_AUTO_UPDATE` | `1`   | No update checks         |
+| `RCLAW_DISABLE_DEVTOOLS`    | `1`   | No DevTools windows      |
+| `RCLAW_CDP_PORT`            | `0`   | CDP disabled             |
 
 ---
 
@@ -268,7 +268,7 @@ bunx electron-vite build
 
 ```bash
 # Clean via database
-sqlite3 "~/Library/Application Support/AionUi-Dev/aionui/aionui.db" \
+sqlite3 "~/Library/Application Support/Rclaw-Dev/rclaw/rclaw.db" \
   "DELETE FROM teams WHERE name LIKE 'E2E%';"
 ```
 

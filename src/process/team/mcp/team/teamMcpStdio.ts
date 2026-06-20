@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 AionUi (aionui.com)
+ * Copyright 2025 Rclaw (rclaw.com)
  * SPDX-License-Identifier: Apache-2.0
  *
  * Standalone stdio MCP server for Team coordination tools.
@@ -74,7 +74,7 @@ function createTeamTool(
 
 // ── Main ─────────────────────────────────────────────────────────────────────
 
-const server = new McpServer({ name: 'aionui-team', version: '1.0.0' }, { capabilities: { tools: {} } });
+const server = new McpServer({ name: 'rclaw-team', version: '1.0.0' }, { capabilities: { tools: {} } });
 
 // ---- team_send_message ----
 createTeamTool(

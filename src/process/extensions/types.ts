@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 AionUi (aionui.com)
+ * Copyright 2025 Rclaw (rclaw.com)
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -64,14 +64,14 @@ export const ExtensionMetaSchema = z
       .record(z.string(), z.string().regex(/^\^?\d+\.\d+\.\d+(-[\w.]+)?$/, 'Dependency version must be semver format'))
       .optional()
       .describe('Extension dependencies: { extensionName: versionRange }'),
-    /** P2: AIONUI core version compatibility */
+    /** P2: RCLAW core version compatibility */
     engine: z
       .object({
-        aionui: z
+        rclaw: z
           .string()
           .regex(/^\^?\d+\.\d+\.\d+(-[\w.]+)?$/, 'Engine version must be semver format')
           .optional()
-          .describe('Compatible AionUI core version range'),
+          .describe('Compatible Rclaw core version range'),
       })
       .optional(),
     /**
@@ -113,7 +113,7 @@ export const ExtensionMetaSchema = z
      */
     permissions: z
       .object({
-        /** Read/write to AionUI persistent storage */
+        /** Read/write to Rclaw persistent storage */
         storage: z.boolean().default(false),
         /** Network access: false (none), true (all), or { allowedDomains: [...], reasoning?: string } */
         network: z
